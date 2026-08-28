@@ -1,2 +1,507 @@
--- This script was generated using the MoonVeil Obfuscator v1.4.5 [https://moonveil.cc]
-local Ea,Na,Ga=(string.char),(string.byte),(bit32 .bxor)local ia=function(Pa,b_)local ba=''for p=-0.014876394661999562*-4571,(#Pa-1554/1554)+(3872+-3804)do ba=ba..Ea(Ga(Na(Pa,(p-(-22132+22200))+-5.4036528693396736e-05*-18506),Na(b_,(p-(17303-17235))%#b_+(-487+488))))end return ba end local D,G=(string.gsub),(string.char)local Ia=(function(Aa)Aa=D(Aa,'[^ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=]','')return(Aa:gsub('.',function(_a)if(_a=='=')then return''end local oa,wa='',(('ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/'):find(_a)-1)for Ka=6,1,-1 do oa=oa..(wa%2^Ka-wa%2^(Ka-1)>0 and'1'or'0')end return oa end):gsub('%d%d%d?%d?%d?%d?%d?%d?',function(ma)if(#ma~=8)then return''end local R=0 for O=1,8 do R=R+(ma:sub(O,O)=='1'and 2^(8-O)or 0)end return G(R)end))end)local da,c,Wa,za,M=cloneref or function(f_)return f_ end,gethui or function()return game:GetService(ia('n\148\136H\188\143D','-\251\250'))end,getgenv or function()return _G end,setclipboard or(syn and syn.write_clipboard)or(toclipboard)or function()end,(syn and syn.request)or(http and http.request)or http_request or(fluxus and fluxus.request)or request local u_,cb,bb,l_=da(game:GetService(ia('\28]\170\53T\185?','L1\203'))),da(game:GetService(ia('\27\\?\2j\132\22\206:|?\2U\131\5\222','N/Zp#\234f\187'))),da(game:GetService(ia('\130\205K\25,\207\179\200X\21!\249','\214\186.|B\156'))),da(c())local K,e_,A,r_,ha,sa,W,s_,ab,Da,ca,Qa=u_.LocalPlayer,Color3 .fromRGB(-1474002/-9634,22567-22371,-20669- -20708),Color3 .fromRGB(3787+-3767,0.0033311125916055963*6004,0.011976047904191617*1670),Color3 .fromRGB(26672+-26641,0.00117575665629978*26366,-7083+7114),Color3 .fromRGB(-2723+2747,449040/18710,-25468+25492),Color3 .fromRGB(-0.0053130257681749758*-11293,19411+-19351,1443300/24055),Color3 .fromRGB(-4155- -4200,-1344510/-29878,-0.0068326753720012144*-6586),Color3 .fromRGB(31821-31601,-20771+20991,-7311+7531),Color3 .fromRGB(11627-11487,-11430+11570,14955-14815),Color3 .fromRGB(0.20560747663551401*1070,-0.0036845983787767134*-21712,0.0073978176437950807*10814),Font.new(ia("\192\176k4\242\221\'[\229\238\139Q;G\239*\a\248\252\157c\241\219\183\96z\210\193\55]\188\164\247V:Z\203+G\176\247\131e\243",'\178\210\19U\129\174B/\223\193\164\55T)\155Y(\158\157\240\n\157'),Enum.FontWeight.Regular,Enum.FontStyle.Normal),Font.new(ia('\203i\160\152\199\243\183\207\180\253\212\175j\228\147\1\132\238\229\1JY\208n\171\214\231\239\167\201\237\183\168\168k\249\183\0\196\166\238\31L[','\185\v\216\249\180\128\210\187\142\210\251\201\5\138\231r\171\136\132l#5'),Enum.FontWeight.Bold,Enum.FontStyle.Normal)for V,j in ipairs{ia('\143\149S\179\243\172\139\186\127\140\243\184','\216\195\f\248\150\213')}do local H=l_:FindFirstChild(j)if H then pcall(function()H:Destroy()end)end end local q=Instance.new(ia('\238\244\182\148\216\249\131\132\212','\189\151\196\241'));q.Name=ia('.-\242\t\218;*\2\222\54\218/','y{\173B\191B');q.IgnoreGuiInset=true;q.ResetOnSpawn=false;q.ZIndexBehavior=Enum.ZIndexBehavior.Sibling;q.DisplayOrder=2147455749- -27898;pcall(function()q.Parent=l_ end)if q.Parent==nil then q.Parent=K:WaitForChild(ia('|\4\160iI\26\134eE',',h\193\16'))end local function va(Ua,B,v,T)local w_=Instance.new(ia('\161\226q\19\134\196I\2','\244\171\"g'));w_.Color=B or sa;w_.Thickness=v or-11436- -11437;w_.Transparency=T or 0;w_.ApplyStrokeMode=Enum.ApplyStrokeMode.Border;w_.Parent=Ua return w_ end local function ga(n_,xa)local pa=Instance.new(ia('YG(\162~\96\14\191','\f\14k\205'));pa.CornerRadius=UDim.new(0,xa or 18765+-18762);pa.Parent=n_ return pa end local function Fa(Z,C,fa_,ra,d_)local la=Instance.new(ia('\29\229\159b\5\225\133s%','I\128\231\22'));la.BackgroundTransparency=-27257- -27258;la.Text=C;la.TextColor3=d_ or s_;la.TextSize=fa_ or 121082/9314;la.FontFace=ra and Qa or ca;la.TextXAlignment=Enum.TextXAlignment.Left;la.TextYAlignment=Enum.TextYAlignment.Center;la.Parent=Z return la end local Ya=Instance.new(ia('\149\30\178\1\182','\211l'));Ya.Name=ia('\205\253\240\230','\159\146');Ya.AnchorPoint=Vector2 .new(2467.5-2467,2338.5/4677);Ya.Position=UDim2 .fromScale(16061.5-16061,25839.5-25839);Ya.Size=UDim2 .fromOffset(3426240/10707,7177+-6987);Ya.BackgroundColor3=A;Ya.BorderSizePixel=0;Ya.Parent=q;ga(Ya,0.0005548619780829519*7209);va(Ya,sa,28669/28669,0)local g=Instance.new(ia('MPH[jvpJ','\24\25\27/'));g.Color=W;g.Thickness=4.443851930853664e-05*22503;g.ApplyStrokeMode=Enum.ApplyStrokeMode.Border;g.Parent=Ya local h=Instance.new(ia('\151\255\176\224\180','\209\141'));h.BackgroundColor3=e_;h.BorderSizePixel=0;h.Position=UDim2 .new(0,0,0,0);h.Size=UDim2 .new(-6652- -6653,0,0,-5063+5064);h.Parent=Ya local La=Instance.new(ia('\20\167\51\184\55','R\213'));La.BackgroundColor3=r_;La.BorderSizePixel=0;La.Position=UDim2 .new(0,-30049- -30050,0,-27807- -27808);La.Size=UDim2 .new(9506+-9505,10399+-10401,0,0.0010198011387779382*23534);La.Parent=Ya local ya=Instance.new(ia('\224\244\199\235\195','\166\134'));ya.BackgroundColor3=e_;ya.BorderSizePixel=0;ya.Position=UDim2 .new(0,-215568/-26946,20313.5-20313,-21098+21095);ya.Size=UDim2 .fromOffset(3502-3496,0.00020395676116663266*29418);ya.Parent=La;ga(ya,6524/6524)local Xa=Fa(La,ia('\129\195e\216\132\212\51\157','\246\186\19\189'),-0.00042435123225069367*-30635,true,s_);Xa.Position=UDim2 .new(0,13772-13752,0,0);Xa.Size=UDim2 .new(3782-3781,16704+-16764,25248-25247,0)local k=Fa(La,ia('L\28\253\165\181^\n\240\224\171',"\'y\132\133\198"),-17300- -17313,false,ab);k.Position=UDim2 .new(0,21291+-21225,0,0);k.Size=UDim2 .new(1752+-1751,-0.024433585073300755*4502,-6925+6926,0)local Va=Instance.new(ia('M\151\163\31\156l\134\175\4\176','\25\242\219k\222'));Va.BackgroundTransparency=-6.6484941160827071e-05*-15041;Va.Text=ia('\148','\204');Va.TextColor3=ab;Va.TextSize=280406/20029;Va.FontFace=Qa;Va.Position=UDim2 .new(784+-783,-8822- -8800,0,0);Va.Size=UDim2 .fromOffset(30700/1535,-785952/-32748);Va.AutoButtonColor=false;Va.Parent=La;Va.MouseEnter:Connect(function()Va.TextColor3=Da end);Va.MouseLeave:Connect(function()Va.TextColor3=ab end)local ja=Fa(Ya,ia(Ia'SEQmTjQ+p2BG+nwESnSR3Rg/1w3C1dfwgfxTBTJfJT61akqoKAAPYsHaE3PMEonV2PWG9BY=',Ia'OCVVOlEe3g8ziFxvLw2xv31TuHrs9bSc6J8='),-27399- -27411,false,ab);ja.Position=UDim2 .new(0,0.07792207792207792*154,0,240064/7502);ja.Size=UDim2 .new(-18855+18856,-21268+21244,0,31275-31261)local Ja=Instance.new(ia('\197G\166\229\96\177\233','\145\"\222'));Ja.BackgroundColor3=ha;Ja.BorderSizePixel=0;Ja.PlaceholderText=ia('\239\225\253','\132');Ja.PlaceholderColor3=Color3 .fromRGB(-6343+6423,-29519- -29599,28368-28288);Ja.Text='';Ja.TextColor3=s_;Ja.TextSize=-25889+25902;Ja.FontFace=ca;Ja.ClearTextOnFocus=false;Ja.TextXAlignment=Enum.TextXAlignment.Left;Ja.Position=UDim2 .new(0,14116-14104,0,25680+-25626);Ja.Size=UDim2 .new(-8111/-8111,-0.002583701151900097*9289,0,-0.0017232237539766702*-15088);Ja.Parent=Ya;ga(Ja,0.0018404907975460123*1630);va(Ja,sa,27697-27696,0)local qa=Instance.new(ia('%[\220C\20v\229L\23','p\18\140\"'));qa.PaddingLeft=UDim.new(0,-19769+19777);qa.PaddingRight=UDim.new(0,-0.0046056419113413936*-1737);qa.Parent=Ja local function I(z,ta,y,aa)local a_=Instance.new(ia('\175<w\172\159\142-{\183\179','\251Y\15\216\221'));a_.BackgroundColor3=aa and e_ or r_;a_.BorderSizePixel=0;a_.Text=z;a_.TextColor3=aa and Color3 .fromRGB(-27978- -27993,4092-4077,-85290/-5686)or s_;a_.TextSize=0.00096289163765646984*13501;a_.FontFace=Qa;a_.AutoButtonColor=false;a_.Position=UDim2 .new(0,ta,0,-0.0046310589688175361*-19434);a_.Size=UDim2 .new(0,y,0,-64168/-2468);a_.Parent=Ya;ga(a_,-10767- -10770);va(a_,aa and e_ or sa,-19539+19540,aa and 3.4299434059338024e-05*11662 or 0)return a_ end local Sa,Ma,ua=I(ia('\146\176\4\213\190\21\140','\245\213p'),0.00065405788412274484*18347,13138+-12993,false),I(ia('\20\142\25\133','x\225'),30764-30601,3306-3161,true),Fa(Ya,'',178020/14835,false,ab);ua.Position=UDim2 .new(0,-317916/-26493,0,-14234+14358);ua.Size=UDim2 .new(4665/4665,0.0054882231877429683*-4373,0,0.0036919831223628692*3792);ua.TextXAlignment=Enum.TextXAlignment.Left local F=Fa(Ya,ia('\164\228)\180\250m\187\235\175\0\164A\185\251?\165\251l\188\183\161\23\255E','\192\141Z\215\149\31\223\197\200g\139\54'),0.00048571554731310988*22647,false,Color3 .fromRGB(21213-21123,-0.0034172456999658277*-26337,2000250/22225));F.Position=UDim2 .new(0,26247-26235,-3210/-3210,-0.00080958549222797922*24704);F.Size=UDim2 .new(11816+-11815,-480528/20022,0,-19363- -19377);F.TextXAlignment=Enum.TextXAlignment.Left local Y=Fa(Ya,ia('\197Mz\154<y\196\56\199\fr\155&h\195$\204','\162,\23\255O\28\170K'),-7620+7631,false,Color3 .fromRGB(17448-17358,14710-14620,-20616- -20706));Y.Position=UDim2 .new(0,0.00036644578129294285*32747,-12166+12167,-0.0010212939794719911*19583);Y.Size=UDim2 .new(-28107- -28108,6478-6502,0,28322/2023);Y.TextXAlignment=Enum.TextXAlignment.Right local Ba,Ha,U;La.InputBegan:Connect(function(Q)if Q.UserInputType==Enum.UserInputType.MouseButton1 or Q.UserInputType==Enum.UserInputType.Touch then Ba=true;Ha=Q.Position;U=Ya.Position end end);La.InputEnded:Connect(function(o_)if o_.UserInputType==Enum.UserInputType.MouseButton1 or o_.UserInputType==Enum.UserInputType.Touch then Ba=false end end);cb.InputChanged:Connect(function(Ca)if not Ba then return end if Ca.UserInputType==Enum.UserInputType.MouseMovement or Ca.UserInputType==Enum.UserInputType.Touch then local L=Ca.Position-Ha;Ya.Position=UDim2 .new(U.X.Scale,U.X.Offset+L.X,U.Y.Scale,U.Y.Offset+L.Y)end end)local function Oa(Ta,fb)ua.Text=Ta or'';ua.TextColor3=fb or ab end local function t_(N,ea)local na=N.BackgroundColor3;N.BackgroundColor3=ea;task.delay(5.518510002299379e-06*21745,function()if not(N and N.Parent)then else bb:Create(N,TweenInfo.new(1.5988630307337004e-05*11258,Enum.EasingStyle.Sine),{BackgroundColor3=na}):Play()end end)end local function Ra(x)local ka=false if M then pcall(function()M{Url=x,Method=ia('\147\145\128','\212')};ka=true end)end return ka end Sa.MouseButton1Click:Connect(function()t_(Sa,W)local db=pcall(function()za(ia('\r\237d\242\23\230\245O\23d\219\132\136t\165K\247u\246K\189\190OI(\216\198\152(\228\6','e\153\16\130d\220\218\96{\17\186\244\250\27\209'))end);Ra(ia('Ke?\148\150\162\136m.\143\23\198q\239\25\r\127.\144\202\249\195mp\195\20\132a\179X@','#\17K\228\229\152\167BB\250v\182\3\128m'))if not(db)then Oa(ia('\222\222\"\183\229\254\217\200\16\0\234\145#\14\28<g\v\143\184\220R\145\186\158\194\50\184\181\229\216\156\\\28\224\146\127\n\n)uZ\153\254\206\18\158\246','\177\174G\217\197\151\183\232rr\133\230Pkn\6Gc\251\204\172!\171\149'),ab)else Oa(ia('\185>]\205\a\161\234\55\168\174a\227!T\127\238\183\175\t>HFF\n\183%\\\209T\167\247g\181\164%\170dP>\228\172\191[wM\3^\4',"\213W3\166\'\194\133G\193\203\5\205\1$\30\157\195\202)W&f\'*"),e_)end end)local eb=false local function _b()if eb then return end local X=Ja.Text if not(not X or#X<-82780/-20695)then else Oa(ia('s\221\251g\17\196\221\51\b\r\54\216\234{C\130\205.\14\v\56','\22\179\143\2c\228\164\\}\127'),Da);t_(Ma,Da)return end eb=true;t_(Ma,Color3 .fromRGB(-3188400/-15942,0.051270100209741321*4291,1923900/19239));Oa(ia('\242\250\147\170\190\240\242\220\224\249','\158\149\242\206\215'),e_);X=X:gsub(ia('\163\a\142\t','\253\"'),''):gsub(ia('ZuT\"','\127\6'),'')local E=Wa();E.lp_key=X;E.Key,E.KEY,E.key=X,X,X;_G.lp_key=X;_G.Key,_G.KEY,_G.key=X,X,X;rawset(_G,ia('\145?\226\150*\196','\253O\189'),X)if not(type(shared)==ia('i\233\127\228x','\29\136'))then else shared.Key=X end pcall(function()za(X)end);task.spawn(function()local i_,J=pcall(function()local Za=game:HttpGet(ia(Ia'JJVoDUCY9XvwWpP1oU7qHrnLZFl8sf5Bls5H+DcthXkPQI29MegAyrLmGa8J75wiRCj1pVvUzl2lbnw=',Ia'TOEcfTOi2lScL/KF0yGeMNeuEHYdwZdu4PxolFg='))local S,m=loadstring(Za)if not(not S)then else error(m or ia('\224\234\247\170\163\137x\a\226\226\182\168\177\148f\v\232','\140\133\150\206\208\253\nn'),0)end S()end)if not(i_)then eb=false;Oa(tostring(J):sub(3.9320541050644855e-05*25432,0.0050828074039561185*23609),Da)else Oa(ia('\160\30\6\168\20\3\226','\204qg'),e_);task.wait(-15423.599999999999/-25706)if q and q.Parent then q:Destroy()end end end)end Ma.MouseButton1Click:Connect(_b);Va.MouseButton1Click:Connect(function()if not(q and q.Parent)then else q:Destroy()end end);Ja.FocusLost:Connect(function(P)if P then _b()end end)
+-- Wyvern Key System - Jnkie SDK Entegreli (Gamesense Tema)
+local Players    = game:GetService("Players")
+local TS         = game:GetService("TweenService")
+local UIS        = game:GetService("UserInputService")
+local CoreGui    = game:GetService("CoreGui")
+
+local LP         = Players.LocalPlayer
+local KEY_FILE   = "wyvern_key.txt"
+
+-- Jnkie SDK Yükle
+local Junkie = loadstring(game:HttpGet("https://jnkie.com/sdk/library.lua"))()
+Junkie.service = "bloxstrike wyvern"
+Junkie.identifier = "1034398"
+Junkie.provider = "wyvern key system"
+
+-- Key dosya yönetimi
+local function saveKey(k)
+    pcall(function()
+        if type(writefile) == "function" then
+            writefile(KEY_FILE, tostring(k or ""))
+        end
+    end)
+end
+local function loadSavedKey()
+    local ok, res = pcall(function()
+        if type(isfile) == "function" and type(readfile) == "function" and isfile(KEY_FILE) then
+            return readfile(KEY_FILE)
+        end
+    end)
+    if ok and type(res) == "string" then
+        return (res:gsub("^%s+", ""):gsub("%s+$", ""))
+    end
+    return nil
+end
+local function forgetKey()
+    pcall(function()
+        if type(delfile) == "function" and type(isfile) == "function" and isfile(KEY_FILE) then
+            delfile(KEY_FILE)
+        elseif type(writefile) == "function" then
+            writefile(KEY_FILE, "")
+        end
+    end)
+end
+
+-- Tema renkleri (Gamesense)
+local ACCENT     = Color3.fromRGB(153, 196, 39)
+local ACCENT_LO  = Color3.fromRGB(120, 155, 30)
+local ACCENT_HI  = Color3.fromRGB(200, 220, 100)
+local BG_MAIN    = Color3.fromRGB(20, 20, 20)
+local BG_HEAD    = Color3.fromRGB(31, 31, 31)
+local BG_FIELD   = Color3.fromRGB(24, 24, 24)
+local BG_BTN     = Color3.fromRGB(31, 31, 31)
+local BG_BTN_HOT = Color3.fromRGB(45, 45, 45)
+local STROKE_SFT = Color3.fromRGB(60, 60, 60)
+local STROKE_DRK = Color3.fromRGB(45, 45, 45)
+local TXT_MAIN   = Color3.fromRGB(220, 220, 220)
+local TXT_MUTE   = Color3.fromRGB(140, 140, 140)
+local TXT_FOOT   = Color3.fromRGB(90, 90, 90)
+local TXT_PLACE  = Color3.fromRGB(80, 80, 80)
+local TXT_ONLIME = Color3.fromRGB(15, 15, 15)
+local ERR_RED    = Color3.fromRGB(220, 80, 80)
+local WARN_ORANGE = Color3.fromRGB(255, 180, 60)
+local FONT_REG   = Font.new("rbxasset://fonts/families/SourceSansPro.json", Enum.FontWeight.Regular, Enum.FontStyle.Normal)
+local FONT_BLD   = Font.new("rbxasset://fonts/families/SourceSansPro.json", Enum.FontWeight.Bold,    Enum.FontStyle.Normal)
+
+-- Helpers
+local function newInst(class, props, parent)
+    local inst = Instance.new(class)
+    if props then for k, v in pairs(props) do inst[k] = v end end
+    if parent then inst.Parent = parent end
+    return inst
+end
+local function corner(inst, r)
+    newInst("UICorner", {CornerRadius = UDim.new(0, r or 3)}, inst)
+end
+local function stroke(inst, c, t, tr)
+    return newInst("UIStroke", {
+        Color = c or STROKE_SFT, Thickness = t or 1,
+        Transparency = tr or 0, ApplyStrokeMode = Enum.ApplyStrokeMode.Border,
+    }, inst)
+end
+
+-- Cleanup
+local host = (gethui and gethui()) or CoreGui
+pcall(function()
+    for _, sg in ipairs(host:GetChildren()) do
+        if sg.Name == "WV_KeySystem" then sg:Destroy() end
+    end
+end)
+pcall(function()
+    for _, sg in ipairs(LP:WaitForChild("PlayerGui"):GetChildren()) do
+        if sg.Name == "WV_KeySystem" then sg:Destroy() end
+    end
+end)
+
+-- ScreenGui
+local ScreenGui = newInst("ScreenGui", {
+    Name = "WV_KeySystem",
+    IgnoreGuiInset = true,
+    ResetOnSpawn = false,
+    ZIndexBehavior = Enum.ZIndexBehavior.Sibling,
+    DisplayOrder = 2147483647,
+})
+pcall(function() ScreenGui.Parent = host end)
+if not ScreenGui.Parent then
+    pcall(function() ScreenGui.Parent = LP:WaitForChild("PlayerGui") end)
+end
+pcall(function() if syn and syn.protect_gui then syn.protect_gui(ScreenGui) end end)
+
+-- Root
+local Root = newInst("Frame", {
+    Name = "Root",
+    AnchorPoint = Vector2.new(0.5, 0.5),
+    Position = UDim2.fromScale(0.5, 0.5),
+    Size = UDim2.fromOffset(320, 190),
+    BackgroundColor3 = BG_MAIN,
+    BorderSizePixel = 0,
+}, ScreenGui)
+corner(Root, 4)
+stroke(Root, STROKE_SFT, 1, 0)
+stroke(Root, STROKE_DRK, 1, 0)
+
+-- Accent line
+newInst("Frame", {
+    BackgroundColor3 = ACCENT,
+    BorderSizePixel = 0,
+    Position = UDim2.fromOffset(0, 0),
+    Size = UDim2.new(1, 0, 0, 1),
+}, Root)
+
+-- Header
+local Header = newInst("Frame", {
+    BackgroundColor3 = BG_HEAD,
+    BorderSizePixel = 0,
+    Position = UDim2.new(0, 1, 0, 1),
+    Size = UDim2.new(1, -2, 0, 24),
+    Active = true,
+}, Root)
+
+local Dot = newInst("Frame", {
+    BackgroundColor3 = ACCENT,
+    BorderSizePixel = 0,
+    Position = UDim2.new(0, 8, 0.5, -3),
+    Size = UDim2.fromOffset(6, 6),
+}, Header)
+corner(Dot, 1)
+
+newInst("TextLabel", {
+    BackgroundTransparency = 1,
+    Text = "wyvern  ",
+    TextColor3 = TXT_MAIN,
+    TextSize = 13,
+    FontFace = FONT_BLD,
+    TextXAlignment = Enum.TextXAlignment.Left,
+    TextYAlignment = Enum.TextYAlignment.Center,
+    Position = UDim2.new(0, 20, 0, 0),
+    Size = UDim2.new(1, -60, 1, 0),
+}, Header)
+
+newInst("TextLabel", {
+    BackgroundTransparency = 1,
+    Text = "key system",
+    TextColor3 = TXT_MUTE,
+    TextSize = 13,
+    FontFace = FONT_REG,
+    TextXAlignment = Enum.TextXAlignment.Left,
+    TextYAlignment = Enum.TextYAlignment.Center,
+    Position = UDim2.new(0, 66, 0, 0),
+    Size = UDim2.new(1, -110, 1, 0),
+}, Header)
+
+local CloseBtn = newInst("TextButton", {
+    BackgroundTransparency = 1,
+    Text = "X",
+    TextColor3 = TXT_MUTE,
+    TextSize = 14,
+    FontFace = FONT_BLD,
+    Position = UDim2.new(1, -22, 0, 0),
+    Size = UDim2.fromOffset(20, 24),
+    AutoButtonColor = false,
+}, Header)
+CloseBtn.MouseEnter:Connect(function() CloseBtn.TextColor3 = ERR_RED end)
+CloseBtn.MouseLeave:Connect(function() CloseBtn.TextColor3 = TXT_MUTE end)
+
+-- Description
+newInst("TextLabel", {
+    BackgroundTransparency = 1,
+    Text = "paste your key below. click get key to open the link.",
+    TextColor3 = TXT_MUTE,
+    TextSize = 12,
+    FontFace = FONT_REG,
+    TextXAlignment = Enum.TextXAlignment.Left,
+    TextYAlignment = Enum.TextYAlignment.Center,
+    Position = UDim2.new(0, 12, 0, 32),
+    Size = UDim2.new(1, -24, 0, 14),
+}, Root)
+
+-- Key Input
+local KeyInput = newInst("TextBox", {
+    BackgroundColor3 = BG_FIELD,
+    BorderSizePixel = 0,
+    PlaceholderText = "key",
+    PlaceholderColor3 = TXT_PLACE,
+    Text = "",
+    TextColor3 = TXT_MAIN,
+    TextSize = 13,
+    FontFace = FONT_REG,
+    ClearTextOnFocus = false,
+    TextXAlignment = Enum.TextXAlignment.Left,
+    Position = UDim2.new(0, 12, 0, 54),
+    Size = UDim2.new(1, -24, 0, 26),
+}, Root)
+corner(KeyInput, 3)
+stroke(KeyInput, STROKE_SFT, 1, 0)
+newInst("UIPadding", {PaddingLeft = UDim.new(0, 8), PaddingRight = UDim.new(0, 8)}, KeyInput)
+
+-- Kaydedilmiş key'i yükle
+do
+    local sk = loadSavedKey()
+    if sk and #sk > 0 then
+        KeyInput.Text = sk
+    end
+end
+
+-- Get Key Button
+local GetKeyBtn = newInst("TextButton", {
+    BackgroundColor3 = BG_BTN,
+    BorderSizePixel = 0,
+    Text = "get key",
+    TextColor3 = TXT_MAIN,
+    TextSize = 13,
+    FontFace = FONT_BLD,
+    AutoButtonColor = false,
+    Position = UDim2.new(0, 12, 0, 90),
+    Size = UDim2.new(0, 145, 0, 26),
+}, Root)
+corner(GetKeyBtn, 3)
+stroke(GetKeyBtn, STROKE_SFT, 1, 0)
+
+-- Load Button
+local LoadBtn = newInst("TextButton", {
+    BackgroundColor3 = ACCENT,
+    BorderSizePixel = 0,
+    Text = "load",
+    TextColor3 = TXT_ONLIME,
+    TextSize = 13,
+    FontFace = FONT_BLD,
+    AutoButtonColor = false,
+    Position = UDim2.new(0, 163, 0, 90),
+    Size = UDim2.new(0, 145, 0, 26),
+}, Root)
+corner(LoadBtn, 3)
+stroke(LoadBtn, ACCENT, 1, 0.4)
+
+-- Status
+local Status = newInst("TextLabel", {
+    BackgroundTransparency = 1,
+    Text = "",
+    TextColor3 = TXT_MUTE,
+    TextSize = 12,
+    FontFace = FONT_REG,
+    TextXAlignment = Enum.TextXAlignment.Left,
+    TextYAlignment = Enum.TextYAlignment.Center,
+    Position = UDim2.new(0, 12, 0, 124),
+    Size = UDim2.new(1, -24, 0, 14),
+    TextTruncate = Enum.TextTruncate.AtEnd,
+}, Root)
+
+-- Footer
+newInst("TextLabel", {
+    BackgroundTransparency = 1,
+    Text = "discord.gg/wyvernscripts",
+    TextColor3 = TXT_FOOT,
+    TextSize = 11,
+    FontFace = FONT_REG,
+    TextXAlignment = Enum.TextXAlignment.Left,
+    TextYAlignment = Enum.TextYAlignment.Center,
+    Position = UDim2.new(0, 12, 1, -20),
+    Size = UDim2.new(1, -24, 0, 14),
+}, Root)
+
+newInst("TextLabel", {
+    BackgroundTransparency = 1,
+    Text = "gamesense edition",
+    TextColor3 = TXT_FOOT,
+    TextSize = 11,
+    FontFace = FONT_REG,
+    TextXAlignment = Enum.TextXAlignment.Right,
+    TextYAlignment = Enum.TextYAlignment.Center,
+    Position = UDim2.new(0, 12, 1, -20),
+    Size = UDim2.new(1, -24, 0, 14),
+}, Root)
+
+-- Drag
+do
+    local dragging, dragStart, startPos
+    Header.InputBegan:Connect(function(input)
+        if input.UserInputType == Enum.UserInputType.MouseButton1
+        or input.UserInputType == Enum.UserInputType.Touch then
+            dragging  = true
+            dragStart = input.Position
+            startPos  = Root.Position
+            input.Changed:Connect(function()
+                if input.UserInputState == Enum.UserInputState.End then dragging = false end
+            end)
+        end
+    end)
+    UIS.InputChanged:Connect(function(input)
+        if dragging and (input.UserInputType == Enum.UserInputType.MouseMovement
+                      or input.UserInputType == Enum.UserInputType.Touch) then
+            local d = input.Position - dragStart
+            Root.Position = UDim2.new(startPos.X.Scale, startPos.X.Offset + d.X,
+                                      startPos.Y.Scale, startPos.Y.Offset + d.Y)
+        end
+    end)
+end
+
+-- Hover tweens
+local function hoverTween(btn, base, hot)
+    btn.MouseEnter:Connect(function()
+        TS:Create(btn, TweenInfo.new(0.12), {BackgroundColor3 = hot}):Play()
+    end)
+    btn.MouseLeave:Connect(function()
+        TS:Create(btn, TweenInfo.new(0.15), {BackgroundColor3 = base}):Play()
+    end)
+end
+hoverTween(GetKeyBtn, BG_BTN, BG_BTN_HOT)
+hoverTween(LoadBtn,   ACCENT, ACCENT_HI)
+
+-- Clipboard
+local function setClip(text)
+    for _, fn in ipairs({setclipboard, toclipboard, set_clipboard,
+                         (syn and syn.write_clipboard),
+                         (Clipboard and Clipboard.set)}) do
+        if type(fn) == "function" then
+            local ok = pcall(fn, text)
+            if ok then return true end
+        end
+    end
+    return false
+end
+
+local function setStatus(text, color)
+    Status.Text = text
+    Status.TextColor3 = color or TXT_MUTE
+end
+
+-- Hata mesajlarını kullanıcı dostu göster
+local ERROR_MESSAGES = {
+    KEY_INVALID = "key not found.",
+    KEY_EXPIRED = "key expired. get a new one.",
+    HWID_BANNED = "hardware banned.",
+    KEY_INVALIDATED = "key was disabled.",
+    ALREADY_USED = "one-time key already used.",
+    HWID_MISMATCH = "hwid limit reached.",
+    SERVICE_NOT_FOUND = "service not found.",
+    SERVICE_MISMATCH = "key is for a different service.",
+    PREMIUM_REQUIRED = "premium key required.",
+    RATE_LIMITED = "rate limited. wait 5 minutes.",
+    ERROR = "network error. try again.",
+}
+
+local function friendlyError(err)
+    if not err then return "unknown error." end
+    local msg = ERROR_MESSAGES[err]
+    if msg then return msg end
+    if tostring(err):match("^http %d+") then
+        return "server error: " .. tostring(err)
+    end
+    return tostring(err)
+end
+
+-- Close
+CloseBtn.MouseButton1Click:Connect(function()
+    pcall(function() ScreenGui:Destroy() end)
+end)
+
+-- Get Key: Jnkie SDK üzerinden dinamik link al
+local gettingKey = false
+GetKeyBtn.MouseButton1Click:Connect(function()
+    if gettingKey then return end
+    gettingKey = true
+
+    GetKeyBtn.BackgroundColor3 = STROKE_DRK
+    TS:Create(GetKeyBtn, TweenInfo.new(0.18, Enum.EasingStyle.Sine), {BackgroundColor3 = BG_BTN}):Play()
+    GetKeyBtn.Text = "loading..."
+    setStatus("getting key link...", TXT_MUTE)
+
+    task.spawn(function()
+        local link, err = Junkie.get_key_link()
+        gettingKey = false
+        GetKeyBtn.Text = "get key"
+
+        if link then
+            local ok = setClip(link)
+            if ok then
+                setStatus("link copied. paste in a browser.", ACCENT)
+            else
+                setStatus("link: " .. tostring(link), ACCENT)
+            end
+        else
+            local errMsg = friendlyError(err)
+            setStatus(errMsg, ERR_RED)
+        end
+    end)
+end)
+
+-- Load: Jnkie SDK ile key doğrula
+local loading = false
+local function submitKey()
+    if loading then return end
+    local key = KeyInput.Text
+    if key then key = (key:gsub("^%s+", ""):gsub("%s+$", "")) end
+    if not key or #key < 4 then
+        setStatus("enter your key first.", ERR_RED)
+        return
+    end
+
+    loading = true
+    LoadBtn.BackgroundColor3 = ACCENT_HI
+    TS:Create(LoadBtn, TweenInfo.new(0.18, Enum.EasingStyle.Sine), {BackgroundColor3 = ACCENT}):Play()
+    LoadBtn.Text = "validating..."
+    LoadBtn.AutoButtonColor = false
+    setStatus("validating key...", ACCENT)
+
+    task.spawn(function()
+        -- Jnkie SDK ile key kontrolü
+        local validation = Junkie.check_key(key)
+
+        if validation and validation.valid then
+            -- KEY GEÇERLİ
+            local g = (type(getgenv) == "function" and getgenv()) or _G
+            g.SCRIPT_KEY = key
+            g.ScriptKey  = key
+            g.script_key = key
+            g.jnkie_key  = key
+            g.lp_key     = key
+            g.Key, g.KEY, g.key = key, key, key
+            _G.SCRIPT_KEY = key
+            _G.ScriptKey  = key
+            _G.script_key = key
+            _G.jnkie_key  = key
+            _G.lp_key     = key
+            _G.Key, _G.KEY, _G.key = key, key, key
+            pcall(function() rawset(_G, "SCRIPT_KEY", key) end)
+            pcall(function() rawset(_G, "lp_key", key) end)
+            if type(shared) == "table" then
+                pcall(function()
+                    shared.SCRIPT_KEY = key
+                    shared.Key = key
+                end)
+            end
+            pcall(function() setClip(key) end)
+            saveKey(key)
+
+            local statusMsg = "validated."
+            if validation.message == "KEYLESS" then
+                statusMsg = "keyless mode active."
+            end
+            setStatus(statusMsg, ACCENT)
+            LoadBtn.Text = "loading..."
+
+            -- Ana script'i yükle
+            local ok, err = pcall(function()
+                local LOADER_URL = "https://api.jnkie.com/api/v1/luascripts/public/b14762e9e0abb2f7113097241cd439d6e577336a2e66393411a635aaa7d8f224/download"
+                local src = game:HttpGet(LOADER_URL)
+                local fn, cerr = loadstring(src)
+                if not fn then error(cerr or "loadstring failed", 0) end
+                fn()
+            end)
+            if ok then
+                setStatus("loaded.", ACCENT)
+                LoadBtn.Text = "loaded"
+                task.wait(0.6)
+                pcall(function() ScreenGui:Destroy() end)
+            else
+                loading = false
+                LoadBtn.Text = "load"
+                LoadBtn.AutoButtonColor = true
+                local msg = tostring(err):sub(1, 120)
+                setStatus(msg, ERR_RED)
+            end
+        else
+            -- KEY GEÇERSİZ
+            loading = false
+            LoadBtn.Text = "load"
+            LoadBtn.AutoButtonColor = true
+            local errMsg = friendlyError(validation and validation.error or "ERROR")
+            setStatus(errMsg, ERR_RED)
+
+            -- HWID ban durumunda kick
+            if validation and validation.error == "HWID_BANNED" then
+                task.wait(1.5)
+                pcall(function() LP:Kick("Hardware banned.") end)
+            end
+        end
+    end)
+end
+
+LoadBtn.MouseButton1Click:Connect(submitKey)
+KeyInput.FocusLost:Connect(function(enter)
+    saveKey(KeyInput.Text)
+    if enter then submitKey() end
+end)
+KeyInput:GetPropertyChangedSignal("Text"):Connect(function()
+    saveKey(KeyInput.Text)
+end)
