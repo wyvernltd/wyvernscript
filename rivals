@@ -1,13 +1,19 @@
+-- Wyvern Key System - Jnkie SDK Entegreli (Gamesense Tema)
 local Players    = game:GetService("Players")
 local TS         = game:GetService("TweenService")
 local UIS        = game:GetService("UserInputService")
 local CoreGui    = game:GetService("CoreGui")
 
 local LP         = Players.LocalPlayer
-local KEY_LINK   = "https://luaprot.net/ad/439fada9"
-local LOADER_URL = "https://luaprot.net/api/v2/loaders/get/06263563942030474282"
 local KEY_FILE   = "wyvern_key.txt"
 
+-- Jnkie SDK Yükle
+local Junkie = loadstring(game:HttpGet("https://jnkie.com/sdk/library.lua"))()
+Junkie.service = "wyvern rivals"
+Junkie.identifier = "1034398"
+Junkie.provider = "wyvern key system"
+
+-- Key dosya yönetimi
 local function saveKey(k)
     pcall(function()
         if type(writefile) == "function" then
@@ -36,6 +42,7 @@ local function forgetKey()
     end)
 end
 
+-- Tema renkleri (Gamesense)
 local ACCENT     = Color3.fromRGB(153, 196, 39)
 local ACCENT_LO  = Color3.fromRGB(120, 155, 30)
 local ACCENT_HI  = Color3.fromRGB(200, 220, 100)
@@ -52,9 +59,11 @@ local TXT_FOOT   = Color3.fromRGB(90, 90, 90)
 local TXT_PLACE  = Color3.fromRGB(80, 80, 80)
 local TXT_ONLIME = Color3.fromRGB(15, 15, 15)
 local ERR_RED    = Color3.fromRGB(220, 80, 80)
+local WARN_ORANGE = Color3.fromRGB(255, 180, 60)
 local FONT_REG   = Font.new("rbxasset://fonts/families/SourceSansPro.json", Enum.FontWeight.Regular, Enum.FontStyle.Normal)
 local FONT_BLD   = Font.new("rbxasset://fonts/families/SourceSansPro.json", Enum.FontWeight.Bold,    Enum.FontStyle.Normal)
 
+-- Helpers
 local function newInst(class, props, parent)
     local inst = Instance.new(class)
     if props then for k, v in pairs(props) do inst[k] = v end end
@@ -71,6 +80,7 @@ local function stroke(inst, c, t, tr)
     }, inst)
 end
 
+-- Cleanup
 local host = (gethui and gethui()) or CoreGui
 pcall(function()
     for _, sg in ipairs(host:GetChildren()) do
@@ -83,6 +93,7 @@ pcall(function()
     end
 end)
 
+-- ScreenGui
 local ScreenGui = newInst("ScreenGui", {
     Name = "WV_KeySystem",
     IgnoreGuiInset = true,
@@ -96,6 +107,7 @@ if not ScreenGui.Parent then
 end
 pcall(function() if syn and syn.protect_gui then syn.protect_gui(ScreenGui) end end)
 
+-- Root
 local Root = newInst("Frame", {
     Name = "Root",
     AnchorPoint = Vector2.new(0.5, 0.5),
@@ -108,6 +120,7 @@ corner(Root, 4)
 stroke(Root, STROKE_SFT, 1, 0)
 stroke(Root, STROKE_DRK, 1, 0)
 
+-- Accent line
 newInst("Frame", {
     BackgroundColor3 = ACCENT,
     BorderSizePixel = 0,
@@ -115,6 +128,7 @@ newInst("Frame", {
     Size = UDim2.new(1, 0, 0, 1),
 }, Root)
 
+-- Header
 local Header = newInst("Frame", {
     BackgroundColor3 = BG_HEAD,
     BorderSizePixel = 0,
@@ -168,6 +182,7 @@ local CloseBtn = newInst("TextButton", {
 CloseBtn.MouseEnter:Connect(function() CloseBtn.TextColor3 = ERR_RED end)
 CloseBtn.MouseLeave:Connect(function() CloseBtn.TextColor3 = TXT_MUTE end)
 
+-- Description
 newInst("TextLabel", {
     BackgroundTransparency = 1,
     Text = "paste your key below. click get key to open the link.",
@@ -180,6 +195,7 @@ newInst("TextLabel", {
     Size = UDim2.new(1, -24, 0, 14),
 }, Root)
 
+-- Key Input
 local KeyInput = newInst("TextBox", {
     BackgroundColor3 = BG_FIELD,
     BorderSizePixel = 0,
@@ -198,6 +214,7 @@ corner(KeyInput, 3)
 stroke(KeyInput, STROKE_SFT, 1, 0)
 newInst("UIPadding", {PaddingLeft = UDim.new(0, 8), PaddingRight = UDim.new(0, 8)}, KeyInput)
 
+-- Kaydedilmiş key'i yükle
 do
     local sk = loadSavedKey()
     if sk and #sk > 0 then
@@ -205,6 +222,7 @@ do
     end
 end
 
+-- Get Key Button
 local GetKeyBtn = newInst("TextButton", {
     BackgroundColor3 = BG_BTN,
     BorderSizePixel = 0,
@@ -219,6 +237,7 @@ local GetKeyBtn = newInst("TextButton", {
 corner(GetKeyBtn, 3)
 stroke(GetKeyBtn, STROKE_SFT, 1, 0)
 
+-- Load Button
 local LoadBtn = newInst("TextButton", {
     BackgroundColor3 = ACCENT,
     BorderSizePixel = 0,
@@ -233,6 +252,7 @@ local LoadBtn = newInst("TextButton", {
 corner(LoadBtn, 3)
 stroke(LoadBtn, ACCENT, 1, 0.4)
 
+-- Status
 local Status = newInst("TextLabel", {
     BackgroundTransparency = 1,
     Text = "",
@@ -246,6 +266,7 @@ local Status = newInst("TextLabel", {
     TextTruncate = Enum.TextTruncate.AtEnd,
 }, Root)
 
+-- Footer
 newInst("TextLabel", {
     BackgroundTransparency = 1,
     Text = "discord.gg/wyvernscripts",
@@ -270,6 +291,7 @@ newInst("TextLabel", {
     Size = UDim2.new(1, -24, 0, 14),
 }, Root)
 
+-- Drag
 do
     local dragging, dragStart, startPos
     Header.InputBegan:Connect(function(input)
@@ -293,6 +315,7 @@ do
     end)
 end
 
+-- Hover tweens
 local function hoverTween(btn, base, hot)
     btn.MouseEnter:Connect(function()
         TS:Create(btn, TweenInfo.new(0.12), {BackgroundColor3 = hot}):Play()
@@ -304,6 +327,7 @@ end
 hoverTween(GetKeyBtn, BG_BTN, BG_BTN_HOT)
 hoverTween(LoadBtn,   ACCENT, ACCENT_HI)
 
+-- Clipboard
 local function setClip(text)
     for _, fn in ipairs({setclipboard, toclipboard, set_clipboard,
                          (syn and syn.write_clipboard),
@@ -321,32 +345,67 @@ local function setStatus(text, color)
     Status.TextColor3 = color or TXT_MUTE
 end
 
+-- Hata mesajlarını kullanıcı dostu göster
+local ERROR_MESSAGES = {
+    KEY_INVALID = "key not found.",
+    KEY_EXPIRED = "key expired. get a new one.",
+    HWID_BANNED = "hardware banned.",
+    KEY_INVALIDATED = "key was disabled.",
+    ALREADY_USED = "one-time key already used.",
+    HWID_MISMATCH = "hwid limit reached.",
+    SERVICE_NOT_FOUND = "service not found.",
+    SERVICE_MISMATCH = "key is for a different service.",
+    PREMIUM_REQUIRED = "premium key required.",
+    RATE_LIMITED = "rate limited. wait 5 minutes.",
+    ERROR = "network error. try again.",
+}
+
+local function friendlyError(err)
+    if not err then return "unknown error." end
+    local msg = ERROR_MESSAGES[err]
+    if msg then return msg end
+    if tostring(err):match("^http %d+") then
+        return "server error: " .. tostring(err)
+    end
+    return tostring(err)
+end
+
+-- Close
 CloseBtn.MouseButton1Click:Connect(function()
     pcall(function() ScreenGui:Destroy() end)
 end)
 
+-- Get Key: Jnkie SDK üzerinden dinamik link al
+local gettingKey = false
 GetKeyBtn.MouseButton1Click:Connect(function()
+    if gettingKey then return end
+    gettingKey = true
+
     GetKeyBtn.BackgroundColor3 = STROKE_DRK
     TS:Create(GetKeyBtn, TweenInfo.new(0.18, Enum.EasingStyle.Sine), {BackgroundColor3 = BG_BTN}):Play()
+    GetKeyBtn.Text = "loading..."
+    setStatus("getting key link...", TXT_MUTE)
 
-    local ok = setClip(KEY_LINK)
-    pcall(function()
-        if type(http) == "table" and type(http.request) == "function" then
-            http.request({Method = "GET", Url = KEY_LINK})
-        elseif type(request) == "function" then
-            request({Method = "GET", Url = KEY_LINK})
-        elseif syn and type(syn.request) == "function" then
-            syn.request({Method = "GET", Url = KEY_LINK})
+    task.spawn(function()
+        local link, err = Junkie.get_key_link()
+        gettingKey = false
+        GetKeyBtn.Text = "get key"
+
+        if link then
+            local ok = setClip(link)
+            if ok then
+                setStatus("link copied. paste in a browser.", ACCENT)
+            else
+                setStatus("link: " .. tostring(link), ACCENT)
+            end
+        else
+            local errMsg = friendlyError(err)
+            setStatus(errMsg, ERR_RED)
         end
     end)
-
-    if ok then
-        setStatus("link copied. paste in a browser to get your key.", ACCENT)
-    else
-        setStatus("clipboard blocked. link: " .. KEY_LINK, ERR_RED)
-    end
 end)
 
+-- Load: Jnkie SDK ile key doğrula
 local loading = false
 local function submitKey()
     if loading then return end
@@ -360,39 +419,80 @@ local function submitKey()
     loading = true
     LoadBtn.BackgroundColor3 = ACCENT_HI
     TS:Create(LoadBtn, TweenInfo.new(0.18, Enum.EasingStyle.Sine), {BackgroundColor3 = ACCENT}):Play()
-    LoadBtn.Text = "loading..."
+    LoadBtn.Text = "validating..."
     LoadBtn.AutoButtonColor = false
-
-    setStatus("loading...", ACCENT)
-
-    local g = getgenv()
-    g.lp_key = key
-    g.Key, g.KEY, g.key = key, key, key
-    _G.lp_key = key
-    _G.Key, _G.KEY, _G.key = key, key, key
-    pcall(function() rawset(_G, "lp_key", key) end)
-    if type(shared) == "table" then pcall(function() shared.Key = key end) end
-    pcall(function() setClip(key) end)
-    saveKey(key)
+    setStatus("validating key...", ACCENT)
 
     task.spawn(function()
-        local ok, err = pcall(function()
-            local src = game:HttpGet(LOADER_URL)
-            local fn, cerr = loadstring(src)
-            if not fn then error(cerr or "loadstring failed", 0) end
-            fn()
-        end)
-        if ok then
-            setStatus("loaded.", ACCENT)
-            LoadBtn.Text = "loaded"
-            task.wait(0.6)
-            pcall(function() ScreenGui:Destroy() end)
+        -- Jnkie SDK ile key kontrolü
+        local validation = Junkie.check_key(key)
+
+        if validation and validation.valid then
+            -- KEY GEÇERLİ
+            local g = (type(getgenv) == "function" and getgenv()) or _G
+            g.SCRIPT_KEY = key
+            g.ScriptKey  = key
+            g.script_key = key
+            g.jnkie_key  = key
+            g.lp_key     = key
+            g.Key, g.KEY, g.key = key, key, key
+            _G.SCRIPT_KEY = key
+            _G.ScriptKey  = key
+            _G.script_key = key
+            _G.jnkie_key  = key
+            _G.lp_key     = key
+            _G.Key, _G.KEY, _G.key = key, key, key
+            pcall(function() rawset(_G, "SCRIPT_KEY", key) end)
+            pcall(function() rawset(_G, "lp_key", key) end)
+            if type(shared) == "table" then
+                pcall(function()
+                    shared.SCRIPT_KEY = key
+                    shared.Key = key
+                end)
+            end
+            pcall(function() setClip(key) end)
+            saveKey(key)
+
+            local statusMsg = "validated."
+            if validation.message == "KEYLESS" then
+                statusMsg = "keyless mode active."
+            end
+            setStatus(statusMsg, ACCENT)
+            LoadBtn.Text = "loading..."
+
+            -- Ana script'i yükle
+            local ok, err = pcall(function()
+                local LOADER_URL = "https://api.jnkie.com/api/v1/luascripts/public/50137e0baa47d4aa7008baf1ceba531c0bb394b141f2afa3681b9d4ce863a57c/download"
+                local src = game:HttpGet(LOADER_URL)
+                local fn, cerr = loadstring(src)
+                if not fn then error(cerr or "loadstring failed", 0) end
+                fn()
+            end)
+            if ok then
+                setStatus("loaded.", ACCENT)
+                LoadBtn.Text = "loaded"
+                task.wait(0.6)
+                pcall(function() ScreenGui:Destroy() end)
+            else
+                loading = false
+                LoadBtn.Text = "load"
+                LoadBtn.AutoButtonColor = true
+                local msg = tostring(err):sub(1, 120)
+                setStatus(msg, ERR_RED)
+            end
         else
+            -- KEY GEÇERSİZ
             loading = false
             LoadBtn.Text = "load"
             LoadBtn.AutoButtonColor = true
-            local msg = tostring(err):sub(1, 120)
-            setStatus(msg, ERR_RED)
+            local errMsg = friendlyError(validation and validation.error or "ERROR")
+            setStatus(errMsg, ERR_RED)
+
+            -- HWID ban durumunda kick
+            if validation and validation.error == "HWID_BANNED" then
+                task.wait(1.5)
+                pcall(function() LP:Kick("Hardware banned.") end)
+            end
         end
     end)
 end
